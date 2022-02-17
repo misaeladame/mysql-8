@@ -17,3 +17,12 @@ CREATE TABLE `ejemplo`.`contactos`
 INSERT INTO `ejemplo`.`contactos` 
 (`nombre`, `apellidos`,`direccion`, `celular`, `correo`, `fecha_nacimiento`, `familia`)
 VALUES ("Ivan", "Perez", "Calle False 999", "987654321", "ivancito@gmail.com", "1991/01/01", 0);
+
+UPDATE `ejemplo`.`contactos`
+SET `nombre` = "Jorge", `correo` = "jorginho@hotmail.com"
+WHERE `id` = 2;
+
+DELETE FROM `ejemplo`.`contactos`
+WHERE `id` = 3;
+
+SELECT * FROM ejemplo.contactos;
