@@ -143,5 +143,26 @@ SELECT *
 FROM ejemplo.contactos2
 WHERE MATCH(direccion) AGAINST("paseo republica");
 
+SELECT *
+FROM ejemplo.contactos2
+ORDER BY nombre;
+
+SELECT *
+FROM ejemplo.contactos2
+ORDER BY nombre DESC;
+
+-- Traer direccion únicas (no repetidas)
+SELECT direccion
+FROM ejemplo.contactos2
+GROUP BY direccion;
+
+SELECT direccion, COUNT(*)
+FROM ejemplo.contactos2
+GROUP BY direccion;
+
+SELECT direccion, COUNT(*)
+FROM ejemplo.contactos2
+GROUP BY direccion
+HAVING COUNT(*) > 1;
 
 DROP TABLE ejemplo.contactos;
