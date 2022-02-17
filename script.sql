@@ -134,4 +134,14 @@ UPDATE ejemplo.contactos2
 SET telefono="12345678" 
 WHERE apellidos LIKE "%Adame%";
 
+-- Solo usar con índices FULLTEXT
+SELECT *
+FROM ejemplo.contactos2
+WHERE MATCH(direccion) AGAINST("False");
+
+SELECT *
+FROM ejemplo.contactos2
+WHERE MATCH(direccion) AGAINST("paseo republica");
+
+
 DROP TABLE ejemplo.contactos;
