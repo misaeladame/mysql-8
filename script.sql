@@ -50,4 +50,27 @@ CREATE TABLE `ejemplo`.`contactos`
     INDEX(apellidos)
 );
 
+ALTER TABLE ejemplo.contactos
+ADD FULLTEXT(direccion);
+
+CREATE TABLE ejemplo.contactos2
+(
+	id INT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(64) NOT NULL,
+    apellidos VARCHAR(64) NOT NULL,
+    direccion VARCHAR(255) NOT NULL,
+    telefono VARCHAR(10) NOT NULL,
+	correo VARCHAR(255) NOT NULL,
+    fecha_nacimiento DATE DEFAULT NULL,
+    familia TINYINT DEFAULT NULL,
+    PRIMARY KEY(id),
+    INDEX(nombre),
+    INDEX(apellidos),
+    FULLTEXT(direccion)
+);
+
 SELECT * FROM ejemplo.contactos;
+
+SELECT * FROM ejemplo.contactos2;
+
+DROP TABLE ejemplo.contactos;
