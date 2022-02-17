@@ -12,4 +12,8 @@ CREATE TABLE `ejemplo`.`contactos`
     `fecha_nacimiento` DATE DEFAULT NULL,
     `familia` TINYINT DEFAULT NULL,
     PRIMARY KEY(`id`)
-)
+);
+
+INSERT INTO `ejemplo`.`contactos` 
+(`nombre`, `apellidos`,`direccion`, `celular`, `correo`, `fecha_nacimiento`, `familia`)
+VALUES ("Ivan", "Perez", "Calle False 999", "987654321", "ivancito@gmail.com", "1991/01/01", 0);
